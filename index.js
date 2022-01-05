@@ -52,7 +52,7 @@ let url = process.argv[2];
 if (!url) {
   console.log(
     chalk.red.italic.bgBlackBright(
-      `sorry you must pass the url as the tird item in the command e.g ${chalk.black.underline.bgWhite(
+      `sorry you must pass the url as the third item in the command e.g ${chalk.black.underline.bgWhite(
         "npm start http://mypage.com"
       )}`
     )
