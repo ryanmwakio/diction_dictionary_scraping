@@ -21,7 +21,12 @@ The app return all words from the page and the count of each word. The english w
 
 ---
 
-When not successful the output will give the following prompt text
+<img  src="https://img.icons8.com/material-outlined/24/000000/info.png" style="width:15px"/> When not successful the output will give the following prompt text
+<img src="https://github.com/ryanmwakio/diction_dictionary_scraping/blob/master/img_1.png" alt="output image">
+
+when successful you will get the following output
+<img src="https://github.com/ryanmwakio/diction_dictionary_scraping/blob/master/img_2.png" alt="output image">
+<img src="https://github.com/ryanmwakio/diction_dictionary_scraping/blob/master/img_3.png" alt="output image">
 
 ---
 
