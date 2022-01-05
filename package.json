@@ -1,0 +1,18 @@
+{
+  "name": "diction_dictionary_scraping",
+  "version": "1.0.0",
+  "description": "scraping and returning instance and count of every word, we are going to use cheerio library",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "ryanmwakio6@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
