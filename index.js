@@ -5,29 +5,58 @@
 
 const axios = require("axios");
 const cheerio = require("cheerio");
+const chalk = require("chalk");
+var checkWord = require("check-if-word"),
+  words = checkWord("en");
 
 function scrapePage(url) {
   axios.get(url).then((res) => {
     const $ = cheerio.load(res.data); //cheerio uses jquery
 
     let wordCount = {};
+    let englishWords = [];
+    let nonEnglishWords = [];
 
     let pageContent = $("body").text().split(" ");
+
+    function check_if_word_exists(word) {
+      return words.check(word);
+    }
 
     //store word as key and count as value then return
     for (let i = 0; i < pageContent.length; i++) {
       if (!wordCount[pageContent[i]]) {
         wordCount[pageContent[i]] = 1; //if the word doesn't exist then add it to the object and set count as 1
+        if (check_if_word_exists(pageContent[i])) {
+          englishWords.push(pageContent[i]);
+        } else {
+          nonEnglishWords.push(pageContent[i]);
+        }
       } else {
         wordCount[pageContent[i]] += 1; // else add the count of the word
+        if (check_if_word_exists(pageContent[i])) {
+          englishWords.push(pageContent[i]);
+        } else {
+          nonEnglishWords.push(pageContent[i]);
+        }
       }
     }
 
-    console.log(wordCount);
+    console.log(englishWords);
     return wordCount;
   });
 }
 
-scrapePage(
-  "https://pesapal.freshteam.com/jobs/-z8xM8RCgTx7/junior-developer?ft_source=LinkedIn_1000080706&ft_medium=Job%20Boards_1000074720"
-);
+let url = process.argv[2];
+
+if (!url) {
+  console.log(
+    chalk.red.italic.bgBlackBright(
+      `sorry you must pass the url as the tird item in the command e.g ${chalk.black.underline.bgWhite(
+        "npm start http://mypage.com"
+      )}`
+    )
+  );
+} else {
+  scrapePage(url);
+}
