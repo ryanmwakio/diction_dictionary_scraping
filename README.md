@@ -21,6 +21,10 @@ The app return all words from the page and the count of each word. The english w
 
 ---
 
+When not successful the output will give the following prompt text
+
+---
+
 <span>The folder structure</span><br>
 
 ```

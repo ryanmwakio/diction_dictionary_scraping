@@ -43,6 +43,7 @@ function scrapePage(url) {
     }
 
     console.log(englishWords);
+    console.log(wordCount);
     return wordCount;
   });
 }
