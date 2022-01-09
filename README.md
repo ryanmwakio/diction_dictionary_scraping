@@ -79,7 +79,7 @@ for (let i = 0; i < pageContent.length; i++) {
 ```
 
 ```javascript
-//we the return the word instance of every word and its count and the english words
+//we then return the word instance of every word and its count and the english words
 console.log(englishWords);
 return [wordCount, englishWords];
 
